@@ -1,0 +1,802 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+/* Edit Form */
+
+.edit-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.edit-card h2 {
+    font-weight: 600;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 0.65rem 0.8rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #212529;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 576px) {
+
+    .edit-card {
+        padding: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .edit-card h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Navbar */
+.navbar {
+    min-height: 72px;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.35rem;
+    letter-spacing: 0.2px;
+    color: #222 !important;
+    white-space: nowrap;
+}
+
+.navbar-brand i {
+    font-size: 1.45rem;
+}
+
+.desktop-navbar {
+    position: relative;
+    min-height: 70px;
+}
+
+/* Left side */
+
+.desktop-left {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.navbar .nav-link {
+    color: #222;
+    font-weight: 500;
+    padding: 8px 12px;
+    margin: 0 3px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-1px);
+}
+
+.desktop-search {
+    position: absolute;
+    left: 45%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    width: 430px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    background: #fff;
+
+    border: 1px solid #d9d9d9;
+    border-radius: 999px;
+
+    padding: 4px 5px 4px 18px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    transition: width 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.search-form:focus-within {
+    width: 500px;
+
+    border-color: #999;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.search-input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    background: transparent;
+
+    font-size: 0.95rem;
+
+    padding: 8px 5px;
+}
+
+.search-input::placeholder {
+    color: #777;
+}
+
+.search-btn {
+    border: none;
+
+    background: #222;
+    color: #fff;
+
+    height: 40px;
+    padding: 0 17px;
+
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #000;
+    transform: scale(1.03);
+}
+
+.desktop-right {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+}
+
+.login-btn,
+.logout-btn {
+    border-radius: 999px;
+    font-weight: 500;
+    padding: 8px 16px;
+}
+
+.user-welcome {
+    font-weight: 600;
+}
+
+
+.mobile-navbar {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 15px 0 10px;
+}
+
+.mobile-search {
+    width: 100%;
+    height: 48px;
+
+    max-width: none;
+}
+
+.mobile-search:focus-within {
+    width: 100%;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.mobile-links .nav-link {
+    width: 100%;
+
+    padding: 10px 12px;
+}
+
+.mobile-auth {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.mobile-auth .nav-link {
+    padding: 10px 12px;
+}
+
+.mobile-auth .btn {
+    margin-top: 4px;
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none !important;
+    padding: 5px 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+@media (max-width: 991px) {
+
+    .navbar {
+        min-height: 64px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-brand i {
+        font-size: 1.3rem;
+    }
+
+    .search-btn {
+        padding: 0 15px;
+    }
+}
+
+
+/* Footer */
+.footer{
+    background-color: #ebebeb;
+}
+.social-icon {
+    color: #222;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.social-icon:hover {
+    color: #dc3545;
+}
+
+/* cards */
+
+/* Listing Cards */
+
+.listing-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.listing-card {
+    background: transparent;
+    transition: transform 0.2s ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-4px);
+}
+
+.listing-image-container {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.listing-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.listing-card:hover .listing-image {
+    transform: scale(1.04);
+}
+
+.listing-card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.listing-card .card-text {
+    font-size: 0.9rem;
+}
+
+
+/* Mobile */
+
+ @media (max-width: 576px) {
+
+    .listing-image-container {
+        height: 260px;
+    }
+
+    .listing-card .card-title {
+        font-size: 1.05rem;
+    }
+
+}
+
+/* Show Listing */
+/* =========================================
+SHOW LISTING PAGE
+========================================= */
+
+.listing-header {
+    max-width: 1000px;
+    margin: 0 auto 1.5rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.listing-title {
+font-size: 2rem;
+font-weight: 600;
+margin-bottom: 8px;
+
+}
+
+.listing-meta {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+color: #666;
+font-size: 0.95rem;
+}
+
+.listing-meta i {
+margin-right: 4px;
+}
+
+.meta-divider {
+color: #aaa;
+}
+
+/* =========================================
+MAIN LISTING CARD
+========================================= */
+
+.show-card {
+max-width: 1000px;
+margin: 0 auto;
+background: #fff;
+border: 1px solid #e5e5e5;
+border-radius: 18px;
+overflow: hidden;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.show-image-wrapper {
+width: 100%;
+height: 450px;
+overflow: hidden;
+}
+
+.show-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+transition: transform 0.4s ease;
+}
+
+.show-image:hover {
+transform: scale(1.03);
+}
+
+.show-content {
+padding: 30px;
+}
+
+.price-box h4 {
+font-weight: 700;
+}
+
+/* =========================================
+OWNER
+========================================= */
+
+.owner-section {
+display: flex;
+align-items: center;
+gap: 12px;
+padding-top: 10px;
+}
+
+.owner-icon {
+width: 45px;
+height: 45px;
+border-radius: 50%;
+background: #f1f1f1;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.1rem;
+
+}
+
+.description-section {
+max-width: 850px;
+}
+
+.show-description {
+color: #555;
+line-height: 1.7;
+font-size: 1rem;
+}
+/* =========================================
+REVIEWS SECTION
+========================================= */
+
+.reviews-section {
+max-width: 1000px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.section-heading h3 {
+font-weight: 600;
+margin-bottom: 6px;
+}
+
+.section-heading h3 i {
+margin-right: 8px;
+}
+
+/* =========================================
+REVIEW FORM
+========================================= */
+
+.review-form-card {
+background: #fff;
+border: 1px solid #e5e5e5;
+border-radius: 16px;
+padding: 28px;
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.review-form-card textarea {
+resize: vertical;
+min-height: 120px;
+}
+
+.review-form-card .form-control {
+border-radius: 10px;
+padding: 11px 13px;
+}
+
+.review-form-card .form-control:focus {
+box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+STARABILITY RATING
+Official Starability CSS is kept separate
+========================================= */
+
+.review-form-card .starability-heartbeat {
+margin-top: 4px;
+margin-bottom: 8px;
+}
+
+/* =========================================
+REVIEW CARDS
+========================================= */
+
+.review-card {
+height: 100%;
+padding: 22px;
+background: #fff;
+border: 1px solid #e5e5e5;
+border-radius: 15px;
+box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+
+display: flex;
+flex-direction: column;
+
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+/* =========================================
+REVIEW RATING
+========================================= */
+
+.review-rating {
+letter-spacing: 2px;
+font-size: 15px;
+margin-bottom: 12px !important;
+}
+
+/* =========================================
+REVIEW AUTHOR
+========================================= */
+
+.review-author {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 12px;
+}
+
+.review-author-icon {
+width: 40px;
+height: 40px;
+min-width: 40px;
+
+border-radius: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: #f1f1f1;
+border: 1px solid #ddd;
+}
+
+.review-author-icon i {
+font-size: 17px;
+}
+
+.review-author h4 {
+margin: 0;
+font-size: 17px;
+font-weight: 600;
+word-break: break-word;
+}
+
+/* =========================================
+REVIEW COMMENT
+========================================= */
+
+.review-comment {
+color: #555;
+line-height: 1.65;
+margin-bottom: 18px;
+min-height: 50px;
+
+overflow-wrap: anywhere;
+}
+
+/* =========================================
+DELETE REVIEW BUTTON
+========================================= */
+
+.review-card form {
+margin-top: auto;
+}
+
+.review-card form button {
+border-radius: 8px;
+padding: 6px 12px;
+}
+
+/* =========================================
+NO REVIEWS
+========================================= */
+
+.no-reviews {
+text-align: center;
+padding: 45px 20px;
+
+border: 1px dashed #ccc;
+border-radius: 15px;
+
+background: #fafafa;
+}
+
+.no-reviews i {
+font-size: 2rem;
+margin-bottom: 12px;
+}
+
+.no-reviews h5 {
+margin-bottom: 6px;
+font-weight: 600;
+}
+
+/* =========================================
+MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 767px) {
+
+.listing-title {
+font-size: 1.55rem;
+}
+
+.listing-meta {
+font-size: 0.85rem;
+gap: 6px;
+}
+
+.show-image-wrapper {
+height: 280px;
+}
+
+.show-content {
+padding: 20px;
+}
+
+.show-content > .d-flex {
+flex-direction: column;
+}
+
+.price-box {
+text-align: left !important;
+}
+
+.review-form-card {
+padding: 20px;
+border-radius: 14px;
+}
+
+.review-card {
+padding: 18px;
+border-radius: 14px;
+}
+
+.review-comment {
+line-height: 1.6;
+}
+
+}
+
+/* =========================================
+SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 480px) {
+
+.show-image-wrapper {
+height: 230px;
+}
+
+.listing-title {
+font-size: 1.4rem;
+}
+
+.listing-meta {
+display: block;
+}
+
+.meta-divider {
+display: none;
+}
+
+.show-content {
+padding: 16px;
+}
+
+.show-content .btn {
+width: 100%;
+}
+
+.review-form-card {
+padding: 16px;
+}
+
+.review-card {
+padding: 16px;
+}
+
+.review-author-icon {
+width: 38px;
+height: 38px;
+min-width: 38px;
+}
+
+.review-author h4 {
+font-size: 16px;
+}
+
+.review-comment {
+font-size: 15px;
+}
+
+}
+
+
+/* =========================
+   MAP SECTION
+========================= */
+
+.map-section {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-section h3 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+    .map-section {
+        width: 100%;
+    }
+
+    #map {
+        height: 320px;
+        border-radius: 12px;
+    }
+}
+
+/* For My map heading */
+.map-popup p {
+    margin: 0;
+    font-size: 14px;
+}

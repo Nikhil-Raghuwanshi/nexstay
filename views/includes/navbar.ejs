@@ -1,0 +1,156 @@
+<nav
+  class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm"
+>
+  <div class="container-fluid px-3 px-md-4">
+    <a
+      class="navbar-brand fw-bold d-flex align-items-center gap-2"
+      href="/listings"
+    >
+      <i class="fa-solid fa-earth-americas"></i>
+      <span>Nexstay</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="desktop-navbar w-100 d-none d-lg-flex align-items-center">
+        <!-- LEFT -->
+
+        <div class="navbar-nav desktop-left">
+          <a class="nav-link" href="/listings/new">
+            <i class="fa-solid fa-plus me-1"></i>
+            Add Listing
+          </a>
+        </div>
+
+        <!-- CENTER SEARCH -->
+
+        <div class="desktop-search">
+          <form action="/listings/search" method="GET" class="search-form">
+            <input
+              type="text"
+              name="location"
+              class="form-control search-input"
+              placeholder="Search destinations..."
+              autocomplete="off"
+              required
+            />
+
+            <button type="submit" class="search-btn" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="navbar-nav desktop-right">
+          <% if (!currentUser) { %>
+
+          <a class="nav-link" href="/signup">
+            <i class="fa-solid fa-user-plus me-1"></i>
+            Sign Up
+          </a>
+
+          <a class="btn btn-dark login-btn" href="/login">
+            <i class="fa-solid fa-right-to-bracket me-1"></i>
+            Login
+          </a>
+
+          <% } %> <% if (currentUser) { %>
+
+          <span class="nav-link user-welcome">
+            <i class="fa-solid fa-user me-1"></i>
+            <%= currentUser.username %>
+          </span>
+
+          <a class="btn btn-outline-dark logout-btn" href="/logout">
+            <i class="fa-solid fa-right-from-bracket me-1"></i>
+            Logout
+          </a>
+
+          <% } %>
+        </div>
+      </div>
+
+      <div class="mobile-navbar d-lg-none">
+        <!-- SEARCH -->
+
+        <form
+          action="/listings/search"
+          method="GET"
+          class="search-form mobile-search"
+        >
+          <input
+            type="text"
+            name="location"
+            class="form-control search-input"
+            placeholder="Search destinations..."
+            autocomplete="off"
+            required
+          />
+
+          <button type="submit" class="search-btn" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+          </button>
+        </form>
+
+        <!-- LEFT NAVIGATION -->
+
+        <div class="navbar-nav mobile-links">
+          <a class="nav-link" href="/listings">
+            <i class="fa-solid fa-compass me-1"></i>
+            All Listings
+          </a>
+
+          <a class="nav-link" href="/listings/new">
+            <i class="fa-solid fa-plus me-1"></i>
+            Add Listing
+          </a>
+        </div>
+
+        <!-- AUTHENTICATION -->
+
+        <div class="mobile-auth">
+          <% if (!currentUser) { %>
+
+          <a class="nav-link" href="/signup">
+            <i class="fa-solid fa-user-plus me-1"></i>
+            Sign Up
+          </a>
+
+          <a class="btn btn-dark login-btn w-100" href="/login">
+            <i class="fa-solid fa-right-to-bracket me-1"></i>
+            Login
+          </a>
+
+          <% } %> <% if (currentUser) { %>
+
+          <span class="nav-link user-welcome">
+            <i class="fa-solid fa-user me-1"></i>
+            <%= currentUser.username %>
+          </span>
+
+          <a class="btn btn-outline-dark logout-btn w-100" href="/logout">
+            <i class="fa-solid fa-right-from-bracket me-1"></i>
+            Logout
+          </a>
+
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

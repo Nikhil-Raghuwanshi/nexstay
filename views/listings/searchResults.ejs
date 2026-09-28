@@ -1,0 +1,89 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container search-results-page">
+  <!-- Search Header -->
+  <div class="search-results-header">
+    <h2 class="search-results-heading">
+      Search results for "<%= searchLocation %>"
+    </h2>
+
+    <% if (listings.length > 0) { %>
+    <p class="search-results-subtitle">
+      <%= listings.length %> <%= listings.length === 1 ? "listing" : "listings"
+      %> found near <%= searchLocation %>
+    </p>
+    <% } %>
+  </div>
+
+  <!-- No Results -->
+  <% if (listings.length === 0) { %>
+
+  <div class="no-results-container">
+    <div class="no-results-icon">
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+
+    <h3 class="no-results-title">No listing found for your given location</h3>
+
+    <p class="no-results-text">
+      We couldn't find any listing near "<%= searchLocation %>".
+    </p>
+
+    <a href="/listings" class="btn btn-dark view-all-btn">
+      <i class="fa-solid fa-compass me-2"></i>
+      View All Listings
+    </a>
+  </div>
+
+  <% } else { %>
+
+  <!-- Search Results -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+    <% listings.forEach(listing => { %>
+
+    <div class="col">
+      <a href="/listings/<%= listing._id %>" class="search-listing-link">
+        <div class="search-listing-card">
+          <!-- Image -->
+          <div class="search-listing-image-wrapper">
+            <img
+              src="<%= listing.image.url %>"
+              alt="<%= listing.title %>"
+              class="search-listing-image"
+              loading="lazy"
+            />
+
+            <!-- Distance -->
+            <div class="distance-badge">
+              <i class="fa-solid fa-location-arrow me-1"></i>
+
+              <%= listing.distance.toFixed(1) %> km
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="search-listing-body">
+            <h5 class="search-listing-title"><%= listing.title %></h5>
+
+            <p class="search-listing-location">
+              <i class="fa-solid fa-location-dot me-1"></i>
+
+              <%= listing.location %> <% if (listing.country) { %> , <%=
+              listing.country %> <% } %>
+            </p>
+
+            <p class="search-listing-price">
+              <strong> ₹<%= listing.price.toLocaleString("en-IN") %> </strong>
+
+              / night
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <% }) %>
+  </div>
+
+  <% } %>
+</div>

@@ -1,0 +1,104 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row justify-content-center mt-5 mb-5">
+
+
+<div class="col-12 col-sm-10 col-md-7 col-lg-5">
+
+    <div class="edit-card">
+
+        <div class="text-center mb-4">
+            <h2 class="fw-semibold">Create an Account</h2>
+            <p class="text-muted">
+                Join WonderLust today
+            </p>
+        </div>
+
+        <form action="/signup" method="post" class="needs-validation" novalidate>
+
+            <!-- Username -->
+            <div class="mb-3">
+                <label for="username" class="form-label">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                >
+
+                <div class="invalid-feedback">
+                    Please enter a username.
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <div class="invalid-feedback">
+                    Please enter a valid email address.
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="password" class="form-label">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+                <div class="invalid-feedback">
+                    Please enter a password.
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button
+                type="submit"
+                class="btn btn-dark w-100 mt-2"
+            >
+                <i class="fa-solid fa-user-plus"></i>
+                Sign Up
+            </button>
+
+        </form>
+
+        <div class="text-center mt-4">
+            <p class="text-muted mb-0">
+                Already have an account?
+                <a href="/login" class="text-decoration-none">
+                    Login
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>

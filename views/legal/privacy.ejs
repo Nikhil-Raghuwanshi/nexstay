@@ -1,0 +1,282 @@
+<% layout("layouts/boilerplate") -%>
+
+<%
+  const pageTitle = typeof privacyPageTitle !== "undefined" ? privacyPageTitle : "Privacy Policy | Nexstay";
+
+  const lastUpdated = typeof privacyLastUpdated !== "undefined" ? privacyLastUpdated : new Date().toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  });
+
+  const supportEmail = supportEmailAddress;
+%>
+  <% if (typeof title === "undefined") { var title = pageTitle; } %>
+
+<main class="privacy-page">
+  <section class="privacy-hero">
+    <div class="privacy-container">
+      <div class="privacy-hero-content">
+        <span class="privacy-eyebrow"><i class="fa-solid fa-shield-halved"></i> Your Privacy Matters</span>
+        <h1>Privacy Policy</h1>
+        <p>
+          This Privacy Policy explains how <strong><%= typeof siteName !== "undefined" ? siteName : "Nexstay" %></strong> collects,
+          uses, stores, and protects information when you use our website and services.
+        </p>
+        <div class="privacy-meta">
+          <span><i class="fa-regular fa-calendar"></i> Last updated: <%= lastUpdated %></span>
+          <span><i class="fa-solid fa-lock"></i> Secure by design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy-content-section">
+    <div class="privacy-container privacy-layout">
+      <aside class="privacy-sidebar" aria-label="Privacy policy navigation">
+        <div class="privacy-toc-card">
+          <h2>On this page</h2>
+          <nav>
+            <a href="#information-we-collect">Information We Collect</a>
+            <a href="#how-we-use">How We Use Information</a>
+            <a href="#accounts">Accounts & Authentication</a>
+            <a href="#listings-reviews">Listings & Reviews</a>
+            <a href="#images-maps">Images, Maps & Location</a>
+            <a href="#cookies-sessions">Cookies & Sessions</a>
+            <a href="#third-parties">Third-Party Services</a>
+            <a href="#data-security">Data Security</a>
+            <a href="#retention">Data Retention</a>
+            <a href="#your-rights">Your Rights & Choices</a>
+            <a href="#children">Children's Privacy</a>
+            <a href="#changes">Changes to This Policy</a>
+            <a href="#contact">Contact Us</a>
+          </nav>
+        </div>
+      </aside>
+
+      <article class="privacy-card">
+        <div class="privacy-intro">
+          <p>
+            Nexstay is a listing and accommodation discovery platform. We aim to collect only the
+            information needed to provide core features such as user accounts, listings, reviews,
+            search, maps, and secure sessions.
+          </p>
+          <p class="privacy-note">
+            <i class="fa-solid fa-circle-info"></i>
+            This page is a project-specific privacy notice and should be updated before using Nexstay
+            as a production commercial service.
+          </p>
+        </div>
+
+        <section class="privacy-section" id="information-we-collect">
+          <span class="section-number">01</span>
+          <h2>Information We Collect</h2>
+          <p>Depending on how you use Nexstay, we may process the following information:</p>
+          <div class="privacy-grid">
+            <div class="privacy-mini-card">
+              <i class="fa-solid fa-user"></i>
+              <h3>Account information</h3>
+              <p>Username and other account details submitted when you register or update your profile.</p>
+            </div>
+            <div class="privacy-mini-card">
+              <i class="fa-solid fa-house"></i>
+              <h3>Listing information</h3>
+              <p>Details you provide for a property listing, such as title, description, price, location, and images.</p>
+            </div>
+            <div class="privacy-mini-card">
+              <i class="fa-solid fa-star"></i>
+              <h3>Reviews</h3>
+              <p>Review content and rating information that you submit for listings.</p>
+            </div>
+            <div class="privacy-mini-card">
+              <i class="fa-solid fa-laptop"></i>
+              <h3>Technical information</h3>
+              <p>Basic request, session, browser, and authentication data required to keep the application secure and functional.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="privacy-section" id="how-we-use">
+          <span class="section-number">02</span>
+          <h2>How We Use Information</h2>
+          <p>Information may be used to:</p>
+          <div class="privacy-check-list">
+            <div><i class="fa-solid fa-check"></i><span>Create and manage user accounts.</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Create, display, edit, and delete listings.</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Display reviews and ratings associated with listings.</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Provide search, filtering, maps, and location-related features.</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Maintain login sessions and prevent unauthorized access.</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Diagnose errors, improve reliability, and protect the application from misuse.</span></div>
+          </div>
+        </section>
+
+        <section class="privacy-section" id="accounts">
+          <span class="section-number">03</span>
+          <h2>Accounts & Authentication</h2>
+          <p>
+            Nexstay uses account authentication to restrict certain actions to signed-in users. Your
+            authentication flow may use Passport and session-based authentication. Passwords should be
+            handled by the authentication system and are not intended to be stored in plain text.
+          </p>
+          <p>
+            You are responsible for keeping your login credentials confidential and for notifying us if
+            you believe your account has been accessed without permission.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="listings-reviews">
+          <span class="section-number">04</span>
+          <h2>Listings & Reviews</h2>
+          <p>
+            Content you submit to Nexstay, including property details, listing images, ratings, and
+            reviews, may be displayed to other visitors according to the functionality of the platform.
+          </p>
+          <p>
+            Do not include passwords, financial information, government identification numbers, or other
+            highly sensitive personal information in listing descriptions or reviews.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="images-maps">
+          <span class="section-number">05</span>
+          <h2>Images, Maps & Location</h2>
+          <p>
+            Listing images uploaded through Nexstay may be processed and stored using the application's
+            configured image-storage service. The current project can use Cloudinary for uploaded listing
+            images.
+          </p>
+          <p>
+            Map and geocoding functionality can use Mapbox services to convert a listing location into
+            map coordinates and display the location on a map. Avoid entering unnecessary sensitive or
+            private location details.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="cookies-sessions">
+          <span class="section-number">06</span>
+          <h2>Cookies & Sessions</h2>
+          <p>
+            Nexstay uses browser cookies as part of session management. Session cookies can be used to
+            keep you signed in, preserve application state, and support authentication and security.
+          </p>
+          <div class="privacy-callout">
+            <i class="fa-solid fa-cookie-bite"></i>
+            <div>
+              <strong>About cookies</strong>
+              <p>
+                Disabling cookies may prevent authentication and other parts of the application from
+                working correctly.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="privacy-section" id="third-parties">
+          <span class="section-number">07</span>
+          <h2>Third-Party Services</h2>
+          <p>
+            Certain Nexstay features may depend on third-party services configured by the application,
+            including:
+          </p>
+          <div class="service-list">
+            <div class="service-row">
+              <span><i class="fa-solid fa-cloud-arrow-up"></i> Cloudinary</span>
+              <small>Image upload and delivery</small>
+            </div>
+            <div class="service-row">
+              <span><i class="fa-solid fa-map-location-dot"></i> Mapbox</span>
+              <small>Maps and geocoding</small>
+            </div>
+            <div class="service-row">
+              <span><i class="fa-solid fa-database"></i> MongoDB</span>
+              <small>Application data storage</small>
+            </div>
+          </div>
+          <p>
+            Third-party providers may process information according to their own terms and privacy
+            policies. Their availability and exact configuration may change as the project evolves.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="data-security">
+          <span class="section-number">08</span>
+          <h2>Data Security</h2>
+          <p>
+            We use reasonable technical and application-level measures intended to protect information,
+            including authenticated access, session controls, server-side validation, and protected
+            handling of application credentials.
+          </p>
+          <p>
+            No internet-based application can guarantee absolute security. Keep your credentials private
+            and use the application only as intended.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="retention">
+          <span class="section-number">09</span>
+          <h2>Data Retention</h2>
+          <p>
+            Information may be retained for as long as necessary to operate the application, maintain
+            accounts and listings, meet security requirements, resolve disputes, or comply with applicable
+            obligations. Retention periods can vary by data type and service provider.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="your-rights">
+          <span class="section-number">10</span>
+          <h2>Your Rights & Choices</h2>
+          <p>Depending on applicable law and the final production setup, you may have rights to:</p>
+          <div class="rights-list">
+            <div><i class="fa-solid fa-eye"></i><span>Request information about personal data associated with your account.</span></div>
+            <div><i class="fa-solid fa-pen"></i><span>Correct inaccurate account or profile information.</span></div>
+            <div><i class="fa-solid fa-trash"></i><span>Request deletion of eligible account or content data.</span></div>
+            <div><i class="fa-solid fa-ban"></i><span>Ask questions about how your information is used or shared.</span></div>
+          </div>
+          <p class="rights-note">
+            Requests may require verification to help protect your account and other users.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="children">
+          <span class="section-number">11</span>
+          <h2>Children's Privacy</h2>
+          <p>
+            Nexstay is not designed to knowingly collect personal information from children without the
+            required permissions. If you believe a child has provided personal information to the service,
+            please contact us so the situation can be reviewed.
+          </p>
+        </section>
+
+        <section class="privacy-section" id="changes">
+          <span class="section-number">12</span>
+          <h2>Changes to This Policy</h2>
+          <p>
+            This Privacy Policy may be updated when the application's features, integrations, or data
+            practices change. The "Last updated" date at the top of this page will be changed when a new
+            version is published.
+          </p>
+        </section>
+
+        <section class="privacy-contact" id="contact">
+          <div class="privacy-contact-icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div class="privacy-contact-copy">
+            <span class="contact-kicker">Need help?</span>
+            <h2>Privacy questions or requests?</h2>
+            <p>
+              Contact Nexstay support regarding account information, privacy questions, or data-related
+              requests.
+            </p>
+            <a class="privacy-support-btn" href="mailto:<%= supportEmail %>?subject=Nexstay%20Privacy%20Request">
+              <i class="fa-regular fa-envelope"></i>
+              <span><%= supportEmail %></span>
+            </a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </section>
+</main>
+
+<script src="/JS/privacy.js"></script>
