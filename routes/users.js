@@ -7,6 +7,7 @@ import {
   login,
   logout,
   signup,
+  getLanding,
 } from "../controllers/user.js";
 
 const router = express.Router();
@@ -30,5 +31,5 @@ router
   );
 
 router.get("/logout", isLoggedIn, logout);
-
+router.get("/",getLanding);
 export { router };

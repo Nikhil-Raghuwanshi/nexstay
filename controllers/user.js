@@ -1,4 +1,5 @@
 import { User } from "../models/user.js";
+import { Listing } from "../models/listing.js";
 
 export const getSignupForm=(req, res) => {
   res.render("users/signUp.ejs");
@@ -43,6 +44,15 @@ export const logout=(req, res, next) => {
       return next(err);
     }
     req.flash("success", "You have been logged out.");
-    res.redirect("/listings");
+    res.redirect("/");
   });
-}
+};
+
+export const getLanding=async (req,res,next)=>{
+    try{
+        const listings=await Listing.find({}).limit(6)
+        res.render("users/landing.ejs",{listings});
+    }catch(err){
+        next(err);
+    }
+};

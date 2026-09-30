@@ -167,8 +167,8 @@ export const searchRoute = wrapAsync(async (req, res) => {
       },
     },
     {
-        $limit: 50,
-    }
+      $limit: 50,
+    },
   ]);
 
   res.render("listings/searchResults.ejs", {
