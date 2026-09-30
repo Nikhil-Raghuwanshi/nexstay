@@ -13,6 +13,7 @@ import { fileURLToPath } from "url";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import flash from "connect-flash";
+import { Listing } from "./models/listing.js";
 
 import { User } from "./models/user.js";
 import passport from "passport";
@@ -87,6 +88,15 @@ app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   res.locals.mapToken = process.env.MAP_TOKEN;
   next();
+});
+
+app.get("/", async (req, res, next) => {
+    try {
+        const listings = await Listing.find({}).limit(6);
+        res.render("landing/landing.ejs", { listings });
+    } catch (err) {
+        next(err);
+    }
 });
 
 // listings route
